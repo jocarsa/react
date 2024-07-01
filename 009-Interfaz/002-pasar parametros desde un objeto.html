@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+<body>
+  <div id="raiz"></div>
+</body>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.0/dist/es-module-shims.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react?dev",
+    "react-dom/client": "https://esm.sh/react-dom/client?dev"
+  }
+}
+</script>
+<script type="text/babel" data-type="module">
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+const JoseVicente = {
+    nombre:"Jose Vicente Carratala Sanchis"
+}
+
+let MiAplicacion = function Profile() {
+  return (
+    <div className="contenedor">
+        <img src="https://media.licdn.com/dms/image/D4D03AQENah8jccRNmg/profile-displayphoto-shrink_200_200/0/1714469770688?e=2147483647&v=beta&t=ZU2DoF-Jwxncu_9PDlfNlijukWObAt8mBpaZ4FycJ0E" />
+        <h3>{JoseVicente.nombre}</h3>
+        <ul>
+            <li>Programador</li>
+            <li>Diseñador</li>
+            <li>Formador</li>
+        </ul>
+    </div>
+  )
+}
+
+
+const raiz = createRoot(document.getElementById('raiz'));
+raiz.render(
+  <StrictMode>
+    <MiAplicacion />
+  </StrictMode>
+);
+</script>
+<style>
+    
+</style>
+</html>

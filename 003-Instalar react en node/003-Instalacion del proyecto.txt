@@ -1,0 +1,7 @@
+create-react-app proyecto1
+cd proyecto1
+npm start
+
+npm run build
+npm install -g serve
+serve -s build

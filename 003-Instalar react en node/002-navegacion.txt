@@ -1,0 +1,6 @@
+cd c:/
+cd xampp
+cd htdocs
+cd react
+mkdir 003-proyectonode1
+cd 003-proyectonode1
