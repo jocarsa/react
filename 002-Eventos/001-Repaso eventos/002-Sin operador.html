@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+<body>
+  <div id="raiz"></div>
+</body>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.0/dist/es-module-shims.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react?dev",
+    "react-dom/client": "https://esm.sh/react-dom/client?dev"
+  }
+}
+</script>
+<script type="text/babel" data-type="module">
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+
+let MiAplicacion = function Profile() { 
+    const miaccion1 = function(){
+        alert('Accion 1 ejecutada');
+      };
+
+      const miaccion2 = function(){
+        alert('Accion 2 ejecutada');
+      };
+  return (
+    <div>
+        <button onClick={miaccion1}>Accion 1</button>
+        <button onClick={miaccion2}>Accion 2</button>
+    </div>
+  )
+}
+
+const raiz = createRoot(document.getElementById('raiz'));
+raiz.render(
+  <StrictMode>
+    <MiAplicacion />
+  </StrictMode>
+);
+</script>
+<style>
+    
+</style>
+</html>

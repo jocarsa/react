@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+<body>
+  <div id="raiz"></div>
+</body>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.0/dist/es-module-shims.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react?dev",
+    "react-dom/client": "https://esm.sh/react-dom/client?dev"
+  }
+}
+</script>
+<script type="text/babel" data-type="module">
+import React, { useState, StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+let Formulario = function Formulario(){
+    const [inputValue, setInputValue] = useState("");
+
+    function handleChange(e) {
+        setInputValue(e.target.value);
+    }
+
+    function enviaFormulario(e){
+        e.preventDefault();
+        console.log(inputValue*2);
+    }
+
+    return (
+        <form onSubmit={enviaFormulario}> 
+            <input type="text" value={inputValue} onChange={handleChange} />
+            <button type="submit">Enviar</button>
+        </form>
+    )
+}
+
+let MiAplicacion = function MiAplicacion() { 
+    return (
+        <Formulario />
+    )
+}
+
+const raiz = createRoot(document.getElementById('raiz'));
+raiz.render(
+  <StrictMode>
+    <MiAplicacion />
+  </StrictMode>
+);
+</script>
+<style>
+    header{
+        border:2px solid grey;
+    }
+</style>
+</html>
